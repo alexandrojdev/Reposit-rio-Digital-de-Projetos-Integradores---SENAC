@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pesquisar PI</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/Css/pg_pesquisa.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <a href="/Pages/pg_home.html" class="logo-link">
+        <img src="/Img/logo_colorida_senac.png" alt="Logo do Senac" class="logo" />
+      </a>
+      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <div class="nav-container">
+        <a href="/Pages/pg_adicionar.html" class="nav-button">
+          <span class="icon-text"><i class="bi bi-plus-lg"></i> Submeter</span>
+        </a>
+        <a href="/Pages/pg_home.html" class="nav-button">
+          <span class="icon-text"><i class="bi bi-house-door-fill"></i> Home</span>
+        </a>
+        <a href="/Pages/pg_pesquisa.html" class="nav-button active">
+          <span class="icon-text"><i class="bi bi-search"></i> Pesquisar PI</span>
+        </a>
+        <a href="/Pages/pg_perfil.html" class="nav-button">
+          <span class="icon-text"><i class="bi bi-person-circle"></i> Perfil</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+      <h1 class="pi-busca">Projetos Integradores <span class="sub">Busca</span></h1>
+      <input type="text" placeholder="O que você procura?" />
+    </div>
+
+    <!-- FILTROS -->
+    <div class="form-section">
+      <h3>Filtros</h3>
+      <div class="form-box">
+        <label for="tipoCurso">Tipo de Curso:</label>
+        <select id="tipoCurso">
+          <option value="">--</option>
+          <option>Qualificação Profissional</option>
+          <option>Técnico</option>
+        </select>
+
+        <label for="areaCurso">Área de interesse:</label>
+        <select id="areaCurso">
+          <option value="">--</option>
+          <option>Tecnologia</option>
+          <option>Arte</option>
+          <option>Meio Ambiente</option>
+          <option>Gastronomia</option>
+        </select>
+
+        <!-- BOTÕES DE ORDENAÇÃO -->
+        <div class="ordenar-section">
+          <label for="ordenarData">Ordenar por data:</label>
+          <select id="ordenarData">
+            <option value="">--</option>
+            <option value="maisRecentes">Mais recentes</option>
+            <option value="maisAntigos">Mais antigos</option>
+          </select>
+        
+          <label for="ordenarTitulo">Ordenar por título:</label>
+          <select id="ordenarTitulo">
+            <option value="">--</option>
+            <option value="az">A-Z</option>
+            <option value="za">Z-A</option>
+          </select>
+        </div>
+
+        
+
+        <label for="rede">Curso:</label>
+        <select id="rede">
+          <option value="">--</option>
+          <option>Programador Full Stack</option>
+          <option>Designer Gráfico</option>
+          <option>Resíduos Sólidos</option>
+          <option>Programador Web</option>
+          <option>Cozinheiro</option>
+          <option>Bartender</option>
+          <option>Cozinheiro</option>
+          <option>Técnico em Desenvolvimento de Sistemas</option>
+          <option>Programador de Dispositivos Móveis</option>
+        </select>
+
+        <div class="button-row">
+          <button id="buscarBtn">Buscar | Redefinir</button>
+          <button id="resetButton">×</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABELA -->
+    <table>
+      <thead>
+        <tr>
+          <th>Tipo de Curso</th>
+          <th>Área</th>
+          <th>Curso</th>
+          <th>Título do Projeto</th>
+          <th>Descrição</th>
+          <th>Data de Atualização</th>
+          <th>Acessar</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tbody>
+        <tr>
+          <td>Qualificação Profissional</td>
+          <td>Tecnologia</td>
+          <td>Programador Full Stack</td>
+          <td>Armazenamento de PI</td>
+          <td>Sistema para armazenar Projetos Integradores</td>
+          <td>01/05/2025</td>
+          <td><a href="/Pages/pg_pi.html"><button>Ver</button></a></td>
+        </tr>
+        <tr>
+          <td>Qualificação Profissional</td>
+          <td>Arte</td>
+          <td>Designer Gráfico</td>
+          <td>Espectro das cores: RGB e CMYK</td>
+          <td>Estudo sobre as dimensões das cores</td>
+          <td>25/04/2025</td>
+          <td><a href="/Pages/pg_pi_design.html"><button>Ver</button></a></td>
+        </tr>
+        <tr>
+          <td>Qualificação Profissional</td>
+          <td>Meio Ambiente</td>
+          <td>Resíduos Sólidos</td>
+          <td>Combate ao Lixão</td>
+          <td>Métodos para erradicação do lixão</td>
+          <td>25/04/2025</td>
+          <td><button>Ver</button></td>
+        </tr>
+        <tr>
+          <td>Técnico</td>
+          <td>Tecnologia</td>
+          <td>Técnico em Desenvolvimento de Sistemas</td>
+          <td>Automatização de certificados</td>
+          <td>Sistema para automatização dos certificados do Senac</td>
+          <td>15/02/2025</td>
+          <td><button>Ver</button></td>
+        </tr>
+        <tr>
+          <td>Qualificação Profissional</td>
+          <td>Tecnologia</td>
+          <td>Programador Web</td>
+          <td>Site responsivo</td>
+          <td>Site responsivo para uma marca de cosmeticos</td>
+          <td> 07/02/2025</td>
+          <td><button>Ver</button></td>
+        </tr>
+        <tr>
+          <td>Técnico</td>
+          <td>Gastronomia</td>
+          <td>Cozinheiro</td>
+          <td>Receita</td>
+          <td>Criação de uma receita nova</td>
+          <td>23/03/2025</td>
+          <td><button>Ver</button></td>
+        </tr>
+        <tr>
+          <td>Qualificação Profissional</td>
+          <td>Gastronomia</td>
+          <td>Bartender</td>
+          <td>Cardapio</td>
+          <td>Cardapio de bebidas criadas pelos alunos</td>
+          <td>17/05/2025</td>
+          <td><button>Ver</button></td>
+        </tr>
+        <tr>
+          <td>Qualificação Profissional</td>
+          <td>Tecnologia</td>
+          <td>Progamador de Dispositivos Moveis</td>
+          <td>Aplicativo mobile</td>
+          <td>Aplicativo para escutar musica</td>
+          <td>05/05/2025</td>
+          <td><button>Ver</button></td>
+        </tr>
+
+    </tbody>
+    </table>
+
+    <!-- CONTROLES DE PAGINAÇÃO -->
+<div class="paginacao" style="text-align: center; margin-top: 20px;">
+  <button id="anteriorBtn">Anterior</button>
+  <span id="paginaAtual">Página 1</span>
+  <button id="proximoBtn">Próximo</button>
+</div>
+
+  </div> <!-- Fim da wrapper -->
+
+<!-- BOTÃO WHATSAPP -->
+  <a href="https://wa.me/557131864000" class="whatsapp-btn" target="_blank" title="Fale conosco pelo WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+<!-- FOOTER NOVO -->
+  <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-links">
+      <a href="https://cursos.ba.senac.br/">Cursos</a>
+      <a href="https://cursos.ba.senac.br/faq">FAQ</a>
+      <a href="https://www.ba.senac.br/Institucional/Sobre">Sobre</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/senacbahia/" target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/school/senac-bahia" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="https://www.youtube.com/senacbahia" target="_blank"><i class="bi bi-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 Senac. Todos os direitos reservados.
+  </div>
+  <a href="#" class="back-to-top botaoTopo custom-top-button" title="Voltar ao topo">
+    <i class="bi bi-arrow-up"></i>
+  </a>
+</footer>
+
+  <!-- Scripts -->
+  <script>
+    // Seleciona todas as linhas da tabela dentro do tbody
+const linhas = Array.from(document.querySelectorAll('table tbody tr'));
+
+// Quantidade de linhas por página
+const linhasPorPagina = 6;
+
+// Página atual
+let paginaAtual = 1;
+
+// Botões e elemento de texto da página atual
+const btnAnterior = document.getElementById('anteriorBtn');
+const btnProximo = document.getElementById('proximoBtn');
+const textoPagina = document.getElementById('paginaAtual');
+
+// Função que mostra só as linhas da página atual
+function mostrarPagina(pagina) {
+  const inicio = (pagina - 1) * linhasPorPagina;
+  const fim = inicio + linhasPorPagina;
+
+  // Esconde todas as linhas
+  linhas.forEach(linha => linha.style.display = 'none');
+
+  // Mostra só as linhas da página atual
+  linhas.slice(inicio, fim).forEach(linha => linha.style.display = '');
+
+  // Atualiza o texto da página
+  textoPagina.textContent = `Página ${pagina}`;
+
+  // Desabilita/ habilita botões conforme página
+  btnAnterior.disabled = pagina === 1;
+  btnProximo.disabled = fim >= linhas.length;
+}
+
+// Evento do botão anterior
+btnAnterior.addEventListener('click', () => {
+  if (paginaAtual > 1) {
+    paginaAtual--;
+    mostrarPagina(paginaAtual);
+  }
+});
+
+// Evento do botão próximo
+btnProximo.addEventListener('click', () => {
+  if ((paginaAtual * linhasPorPagina) < linhas.length) {
+    paginaAtual++;
+    mostrarPagina(paginaAtual);
+  }
+});
+
+// Mostra a primeira página ao carregar a página
+mostrarPagina(paginaAtual);
+
+  </script>
+  <script>
+// Função de busca
+document.getElementById('buscarBtn').addEventListener('click', () => {
+  // Captura os valores dos campos de busca
+  const termoBusca = document.querySelector('.hero input[type="text"]').value.toLowerCase();
+  const tipoCurso = document.getElementById('tipoCurso').value.toLowerCase();
+  const areaCurso = document.getElementById('areaCurso').value.toLowerCase();
+  const rede = document.getElementById('rede').value.toLowerCase();
+ 
+  // Seleciona todas as linhas da tabela (tr dentro de tbody)
+  const linhas = document.querySelectorAll('table tbody tr');
+  // Para cada linha, verifica se corresponde aos critérios de busca
+  linhas.forEach(linha => {
+    const texto = linha.innerText.toLowerCase();
+    // Verifica se a linha contém todos os termos de busca que foram preenchidos
+    let corresponde = true;
+    if (termoBusca && !texto.includes(termoBusca)) {
+      corresponde = false;
+    }
+    if (tipoCurso && tipoCurso !== "selecione" && !texto.includes(tipoCurso)) {
+      corresponde = false;
+    }
+    if (areaCurso && areaCurso !== "selecione" && !texto.includes(areaCurso)) {
+      corresponde = false;
+    }
+    if (rede && !texto.includes(rede)) {
+      corresponde = false;
+    }
+    // Mostra ou esconde a linha baseado no resultado
+    linha.style.display = corresponde ? '' : 'none';
+  });
+});
+ 
+// Resetar filtros
+document.getElementById('resetButton').addEventListener('click', () => {
+  // Limpa todos os campos do formulário
+  document.querySelectorAll('input, select').forEach(el => el.value = '');
+  // Mostra todas as linhas da tabela
+  document.querySelectorAll('.linhas-table tr').forEach(linha => {
+    linha.style.display = '';
+  });
+});
+
+
+// Executa após o carregamento do DOM
+document.addEventListener('DOMContentLoaded', () => {
+  const tipoCursoSelect = document.getElementById('tipoCurso');
+  const cursoSelect = document.getElementById('rede');
+
+  // Define os cursos disponíveis para cada tipo de curso
+  const cursosPorTipo = {
+    'Qualificação Profissional': [
+      'Programador Full Stack',
+      'Designer Gráfico',
+      'Resíduos Sólidos',
+      'Programador Web',
+      'Cozinheiro',
+      'Bartender',
+      'Programador de Dispositivos Móveis'
+    ],
+    'Técnico': [
+      'Técnico em Desenvolvimento de Sistemas',
+      'Cozinheiro'
+    ]
+  };
+
+  // Evento de mudança no tipo de curso
+  tipoCursoSelect.addEventListener('change', () => {
+    const tipoSelecionado = tipoCursoSelect.value;
+
+    // Limpa opções atuais
+    cursoSelect.innerHTML = '<option value="">Selecione</option>';
+
+    // Adiciona novas opções de cursos conforme o tipo
+    if (cursosPorTipo[tipoSelecionado]) {
+      cursosPorTipo[tipoSelecionado].forEach(curso => {
+        const option = document.createElement('option');
+        option.value = curso.toLowerCase(); // para compatibilidade com filtro
+        option.textContent = curso;
+        cursoSelect.appendChild(option);
+      });
+    }
+  });
+});
+  </script>
+  <script src="/Js/funcoes.js"></script>
+  </script>
+  
+</body>
+
+</html>

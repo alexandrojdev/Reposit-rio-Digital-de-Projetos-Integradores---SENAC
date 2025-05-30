@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recuperação de Acesso</title>
+  <link rel="stylesheet" href="/Css/pg_cadastro.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    /* Estilos adicionais para aumentar fonte */
+    .h4-pag, .h4-1-pag {
+      font-size: 18px;
+    }
+    .footer {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <div class="logo">
+        <img src="/Img/logo_colorida_senac.png" alt="Logo do Senac">
+      </div>
+
+      <h4 class="h4-pag">Esqueceu sua senha?</h4>
+      <h4 class="h4-1-pag">Informe seu e-mail para recuperar a senha</h4>
+
+      <form id="formEsqueciSenha">
+        <div class="form-group input-wrapper">
+          <label for="email"><i class="fas fa-envelope"></i> E-mail</label>
+          <input type="email" id="email" placeholder="exemplo@senac.com.br" required>
+          <span class="clear-btn" onclick="document.getElementById('email').value = ''">&times;</span>
+        </div>
+
+        <button type="submit" class="botao-recuperar" id="btnEnviar">Enviar link</button>
+      </form>
+
+      <div class="links">
+        <a href="/Pages/pg_login.html">Voltar para o Login</a>
+        <a href="/Pages/pg_recup.html">Tentar de outro jeito (SMS)</a>
+      </div>
+
+      <div class="footer">
+        © 2025 SENAC - Todos os direitos reservados
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("formEsqueciSenha").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const btnEnviar = document.getElementById("btnEnviar");
+
+      if (!email) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Campo vazio',
+          text: 'Por favor, informe seu e-mail.'
+        });
+        return;
+      }
+
+      if (!email.endsWith('.com')) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Email inválido',
+          text: 'O email deve terminar com .com'
+        });
+        return;
+      }
+
+      // Mudar aparência do botão durante envio
+      btnEnviar.style.backgroundColor = '#ccc';
+      btnEnviar.disabled = true;
+
+      Swal.fire({
+        title: 'Enviando...',
+        text: 'Estamos processando seu pedido.',
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: () => Swal.showLoading()
+      }).then(() => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Link enviado!',
+          text: 'Verifique sua caixa de entrada.',
+        });
+
+        // Feedback no botão
+        btnEnviar.textContent = "Enviado";
+        btnEnviar.style.backgroundColor = '#4CAF50';
+      });
+    });
+  </script>
+</body>
+</html>

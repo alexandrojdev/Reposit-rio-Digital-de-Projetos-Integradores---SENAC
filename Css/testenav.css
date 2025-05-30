@@ -1,0 +1,235 @@
+/* Reset básico de margens e caixas */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fonte e fundo geral */
+body, html {
+  font-family: Arial, sans-serif;
+  height: 100%;
+  background-color: #f9f9f9;
+}
+
+/* Wrapper geral para garantir que o footer fique no fundo */
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===================== NAVBAR ===================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.11);
+  position: relative;
+  z-index: 10;
+}
+
+/* Tamanho do logo */
+.logo {
+  height: 40px;
+  margin-left: 12px;
+}
+
+/* .logo-link {
+  height: 80px;
+} */
+/* Container com os botões de navegação */
+.nav-container {
+  display: flex;
+  gap: 20px;
+}
+
+/* Botões do menu */
+.nav-button {
+  padding: 10px 16px;
+  background: #fff;
+  border-radius: 8px 8px 0 0;
+  text-decoration: none;
+  color: #003366;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Ícones nos botões */
+.nav-button i {
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+/* Hover visual nos botões */
+.nav-button:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.170);
+  transform: scale(1.03);
+  color: #F6931D;
+}
+
+.nav-button:hover i {
+  color: #F6931D;
+}
+
+/* Botão ativo (página atual) */
+.nav-button.active {
+  border-bottom: 3px solid #FFA500;
+  font-weight: 700;
+}
+
+/* Layout para alinhar ícone + texto */
+.icon-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===================== NAVBAR MOBILE ===================== */
+
+/* Botão hamburguer - só aparece em telas pequenas */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #003366;
+}
+
+/* Estilos para responsividade */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-container {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: none;
+  }
+
+  .nav-container.active {
+    display: flex;
+  }
+}
+
+/* ===================== CONTEÚDO ===================== */
+
+/* Área de conteúdo principal */
+.main-content {
+  flex: 1;
+  padding: 30px;
+}
+
+/* ===================== FOOTER ===================== */
+
+.footer {
+  background-color: #003366;
+  color: white;
+  padding: 20px 30px;
+  font-size: 16px;
+  margin-top: auto; /* Empurra o footer para o fundo */
+}
+
+/* Container com logo, links e redes sociais */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Estilo da logo no footer */
+.footer-logo img {
+  height: 40px;
+  filter: brightness(0) invert(1); /* Deixa o logo branco */
+}
+
+/* Links institucionais */
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-left: 30px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #F6931D;
+}
+
+/* Ícones sociais */
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #F6931D;
+}
+
+/* Rodapé inferior */
+.footer-bottom {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* ===================== PALETA DE CORES ===================== */
+/*
+Padrão de cores:
+LARANJÃO - #F6931D
+LARANJINHA - #FCC080
+AZUL ESCURO - #004A8C
+AZUL CLARO - #2884D6
+CINZA CLARO - #EBEBEB
+*/
+
+/* ===================== ⚠ ===================== */
+
+
+/* ===================== SEU ESTILO A PARTIR DAQUI ===================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================== ⚠ ===================== */
+
+/* ===================== FIM DO CSS ===================== */

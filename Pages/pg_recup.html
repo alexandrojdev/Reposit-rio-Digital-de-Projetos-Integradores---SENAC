@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recuperação via SMS</title>
+  <link rel="stylesheet" href="/Css/pg_cadastro.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-box">
+
+      <!-- Logotipo -->
+      <div class="logo">
+        <img src="/Img/logo_colorida_senac.png" alt="Logo do Senac">
+      </div>
+
+      <!-- Título -->
+      <h4 class="h4-pag">Recuperação por telefone</h4>
+      <h4 class="h4-1-pag">Informe seu número de celular</h4>
+
+      <!-- Formulário -->
+      <form id="formSms">
+        <div class="form-group">
+          <label for="telefone"><i class="fas fa-phone"></i> Celular</label>
+          <input type="text" id="telefone" maxlength="15" placeholder="(DDD) 00000-0000">
+        </div>
+        <button type="submit" class="botao-recuperar">Enviar código por SMS</button>
+      </form>
+
+      <!-- Link de retorno -->
+      <div class="links">
+        <a href="/Pages/pg_esqueceu.html">Voltar</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Script JS -->
+  <script>
+    // Formatação automática do telefone
+    document.getElementById('telefone').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      
+      // Aplica a máscara conforme o tamanho do número
+      if (value.length > 0) {
+        value = '(' + value;
+      }
+      if (value.length > 3) {
+        value = value.substring(0, 3) + ') ' + value.substring(3);
+      }
+      if (value.length > 10) {
+        value = value.substring(0, 10) + '-' + value.substring(10);
+      }
+      
+      // Limita o tamanho máximo
+      if (value.length > 15) {
+        value = value.substring(0, 15);
+      }
+      
+      e.target.value = value;
+    });
+
+    document.getElementById("formSms").addEventListener("submit", function(e) {
+      e.preventDefault(); // Impede o envio padrão do formulário
+
+      const telefone = document.getElementById("telefone").value.trim();
+
+      // Verifica se o campo está vazio
+      if (!telefone) {
+          Swal.fire({
+              icon: 'error',
+              title: 'Campo vazio',
+              text: 'Preencha seu número de telefone.'
+          });
+          return;
+      }
+
+      // Remove tudo que não for número
+      const phoneDigits = telefone.replace(/\D/g, '');
+
+      // Verifica se tem 10 ou 11 dígitos
+      if (phoneDigits.length !== 10 && phoneDigits.length !== 11) {
+          Swal.fire({
+              icon: 'error',
+              title: 'Telefone inválido',
+              text: 'O número deve conter 10 ou 11 dígitos (incluindo o DDD).'
+          });
+          return;
+      }
+
+      // Valida celular (11 dígitos começando com DDD + 9)
+      const regexCelular = /^\d{2}9\d{8}$/;
+
+      // Valida telefone fixo (10 dígitos começando com DDD + número entre 2 e 5)
+      const regexFixo = /^\d{2}[2-5]\d{7}$/;
+
+      if (!(regexCelular.test(phoneDigits) || regexFixo.test(phoneDigits))) {
+          Swal.fire({
+              icon: 'error',
+              title: 'Telefone inválido',
+              text: 'Informe um número de telefone válido com DDD. Ex: 11991234567 ou 1123456789.'
+          });
+          return;
+      }
+
+      Swal.fire({
+        title: 'Enviando código...',
+        text: 'Aguarde um instante.',
+        timer: 2000,
+        didOpen: () => Swal.showLoading()
+      }).then(() => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Código enviado!',
+          text: 'Digite o código que você recebeu por SMS.'
+        }).then(() => {
+          // Redireciona para a tela de verificação
+          window.location.href = "pg_verificar.html";
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

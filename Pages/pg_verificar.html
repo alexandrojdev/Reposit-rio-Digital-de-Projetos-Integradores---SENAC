@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificação de Código</title>
+  <link rel="stylesheet" href="/Css/pg_cadastro.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    /* Aumentar fonte */
+    .h4-pag, .h4-1-pag {
+      font-size: 18px;
+    }
+    .footer {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <div class="logo">
+        <img src="/Img/logo_colorida_senac.png" alt="Logo do Senac">
+      </div>
+
+      <h4 class="h4-pag">Digite o código de verificação</h4>
+      <h4 class="h4-1-pag">Enviado por SMS.</h4>
+
+      <form id="formCodigo">
+        <div class="form-group input-wrapper">
+          <label for="codigo">Digite o Código de 6 dígitos</label>
+          <input type="text" id="codigo" maxlength="6" pattern="\d{6}" placeholder="Ex: 123456" required>
+          <span class="clear-btn" onclick="document.getElementById('codigo').value = ''">&times;</span>
+        </div>
+        <button type="submit" class="botao-recuperar">Verificar</button>
+      </form>
+
+      <div class="links">
+        <a href="/Pages/pg_recup.html">Voltar ao envio de SMS</a>
+        <a href="/Pages/pg_login.html">Voltar ao Login</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("formCodigo").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const codigo = document.getElementById("codigo").value.trim();
+
+      if (codigo.length !== 6 || isNaN(codigo)) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Código inválido!',
+          text: 'Insira um código numérico de 6 dígitos.'
+        });
+        return;
+      }
+
+      Swal.fire({
+        title: 'Verificando...',
+        text: 'Aguarde um momento',
+        timer: 2000,
+        didOpen: () => Swal.showLoading()
+      }).then(() => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Código aceito!',
+          text: 'Você será redirecionado para redefinir sua senha.'
+        }).then(() => {
+          window.location.href = "pg_redefinir.html";
+        });
+      });
+    });
+  </script>
+</body>
+</html>

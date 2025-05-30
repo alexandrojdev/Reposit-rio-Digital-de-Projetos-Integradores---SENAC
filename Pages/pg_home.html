@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+ 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Repositório de PIs</title>
+ 
+  <!-- Google Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+ 
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+ 
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+ 
+  <!-- Estilos do Projeto -->
+  <link rel="stylesheet" href="/Css/pg_home.css" />
+</head>
+ 
+<body>
+ 
+  <!-- WRAPPER para manter footer fixo -->
+  <div class="wrapper">
+ 
+    <!-- NAVBAR NOVA -->
+    <nav class="navbar">
+      <a href="/Pages/pg_home.html" class="logo-link">
+        <img src="/Img/logo_colorida_senac.png" alt="Logo do Senac" class="logo" />
+      </a>
+      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">☰</button>
+ 
+      <div class="nav-container">
+        <a href="/Pages/pg_adicionar.html" class="nav-button">
+          <span class="icon-text"><i class="bi bi-plus-lg"></i> Submeter</span>
+        </a>
+        <a href="/Pages/pg_home.html" class="nav-button active">
+          <span class="icon-text"><i class="bi bi-house-door-fill"></i> Home</span>
+        </a>
+        <a href="/Pages/pg_pesquisa.html" class="nav-button">
+          <span class="icon-text"><i class="bi bi-search"></i> Pesquisar PI</span>
+        </a>
+        <a href="/Pages/pg_perfil.html" class="nav-button">
+          <span class="icon-text"><i class="bi bi-person-circle"></i> Perfil</span>
+        </a>
+      </div>
+    </nav>
+ 
+ 
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div id="senacCarousel" class="carousel slide" data-bs-ride="carousel" >
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#senacCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+        <button type="button" data-bs-target="#senacCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#senacCarousel" data-bs-slide-to="2"></button> <!-- Novo indicador -->
+        <button type="button" data-bs-target="#senacCarousel" data-bs-slide-to="3"></button> <!-- Adicionei mais um botão pra fazer a quarta imagem rodar no carrossel-->
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/Img/home_carrossel/carrossel_1.png" class="d-block w-100" alt="Slide 1" />
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+            <h5>PROJETO INTEGRADOR</h5>
+            <p>Conheça a ideia por detrás de cada produção dos nossos alunos.</p>
+       </div>
+        </div>
+        <div class="carousel-item">
+          <img src="/Img/home_carrossel/carrossel_2.png" class="d-block w-100" alt="Slide 2" />
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+            <h5>FAÇA PARTE DISSO</h5>
+            <p>Transforme sua carreira com o SENAC Bahia.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="/Img/home_carrossel/carrossel_3.jpg" class="d-block w-100" alt="Slide 3" />
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+            <h5>SEU FUTURO COMEÇA AQUI</h5>
+            <p>Conecte-se com oportunidades reais através da educação prática.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="/Img/home_carrossel/carrossel_4.jpg" class="d-block w-100" alt="Slide 4" />
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+            <h5>TRANSFORME SONHOS EM CONQUISTAS</h5>
+            <p>Aprenda fazendo e prepare-se para os desafios do mercado com o SENAC.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#senacCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#senacCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+ 
+<!-- Seção explicando o que é o PI -->
+<section class="explicacao-pi p-4 bg-light text-center">
+  <div class="container-oq">
+    <h2 class="mb-3">O que é um Projeto Integrador?</h2>
+    <div class="centralizar-texto">
+    <p class="texto-pi">
+      O Projeto Integrador (PI) é uma atividade desenvolvida nos cursos técnicos ou de qualificação profissional do Senac,
+      que tem como objetivo integrar as habilidades adquiridas ao longo das disciplinas do curso. Embasado nas marcas
+      formativas do Senac, o PI busca promover o protagonismo, a resolução de problemas reais e a aplicação prática do conhecimento,
+      preparando os alunos para os desafios do mundo do trabalho.
+    </p>
+    </div>
+  </div>
+</section>
+<!-- Seção das Marcas Formativas do Senac -->
+ 
+<!-- Seção das Marcas Formativas do Senac -->
+<section class="marcas-formativas p-5 text-white">
+  <div class="container">
+    <h2 class="mb-4 text-center">Conheça nossas marcas formativas:</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      
+      <!-- Exemplo de card -->
+      <div class="col">
+        <div class="card h-100 shadow-sm p-3">
+          <div class="d-flex align-items-start">
+            <i class="bi bi-diagram-3-fill fs-2 text-primary me-3"></i>
+            <div>
+              <h5 class="fw-bold mb-2">Domínio técnico-científico</h5>
+              <p class="mb-0">Integração de conhecimentos, habilidades, atitudes e valores essenciais para uma atuação profissional competente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow-sm p-3">
+          <div class="d-flex align-items-start">
+            <i class="bi bi-people-fill fs-2 text-primary me-3"></i>
+            <div>
+              <h5 class="fw-bold mb-2">Colaboração e comunicação</h5>
+              <p class="mb-0">Uso eficaz da comunicação em diferentes contextos e desenvolvimento de relacionamentos interpessoais éticos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow-sm p-3">
+          <div class="d-flex align-items-start">
+            <i class="bi bi-globe-americas fs-2 text-primary me-3"></i>
+            <div>
+              <h5 class="fw-bold mb-2">Atitude sustentável</h5>
+              <p class="mb-0">Consumo consciente, uso racional dos recursos, práticas cidadãs e respeito à diversidade e ética.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow-sm p-3">
+          <div class="d-flex align-items-start">
+            <i class="bi bi-bullseye fs-2 text-primary me-3"></i>
+            <div>
+              <h5 class="fw-bold mb-2">Visão crítica</h5>
+              <p class="mb-0">Habilidade de questionar o ambiente em que está inserido para investigar causas e relações.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow-sm p-3">
+          <div class="d-flex align-items-start">
+            <i class="bi bi-pc-display-horizontal fs-2 text-primary me-3"></i>
+            <div>
+              <h5 class="fw-bold mb-2">Autonomia digital</h5>
+              <p class="mb-0">Capacidade de viver e trabalhar em uma sociedade conectada, usando meios digitais para comunicar e produzir.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow-sm p-3">
+          <div class="d-flex align-items-start">
+            <i class="bi bi-lightbulb-fill fs-2 text-primary me-3"></i>
+            <div>
+              <h5 class="fw-bold mb-2">Criatividade e atitude empreendedora</h5>
+              <p class="mb-0">Análise do campo de atuação profissional em um ambiente complexo e incerto.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+ 
+<!-- TITULO DO CARD-->
+    <div class="card-title">
+      <h2 class="titulo">Projetos mais recentes:</h2>
+    </div>
+ 
+    <!-- CARDS -->
+    <section class="card-container">
+      <div class="swiper-button-prev"></div>
+      <div class="card-wrapper swiper">
+        <ul class="card-list swiper-wrapper">
+          <!-- Repetição dos cards -->
+          <li class="card-item swiper-slide">
+            <a href="/Pages/pg_pi.html" class="card-link">
+              <img src="/Img/home_cards/card_1.png" alt="Card Image" class="card-image" />
+              <p class="badge">Programador Full Stack</p>
+              <h2 class="card-title">Repositório digital de Projetos Integradores</h2>
+              <button class="card-button material-symbols-outlined">arrow_forward</button>
+            </a>
+          </li>
+ 
+          <li class="card-item swiper-slide">
+            <a href="#" class="card-link">
+              <img src="/Img/home_cards/card_2.png" alt="Card Image" class="card-image" />
+              <p class="badge">Residuos Sólidos</p>
+              <h2 class="card-title">Combate ao lixão</h2>
+              <button class="card-button material-symbols-outlined">arrow_forward</button>
+            </a>
+          </li>
+ 
+          <li class="card-item swiper-slide">
+            <a href="#" class="card-link">
+              <img src="/Img/home_cards/card_3.png" alt="Card Image" class="card-image" />
+              <p class="badge">Residuos Sólidos</p>
+              <h2 class="card-title">Combate ao lixão</h2>
+              <button class="card-button material-symbols-outlined">arrow_forward</button>
+            </a>
+          </li>
+ 
+          <li class="card-item swiper-slide">
+            <a href="/Pages/pg_pi_design.html" class="card-link">
+              <img src="/Img/home_cards/card_4.png" alt="Card Image" class="card-image" />
+              <p class="badge">Design Gráfico</p>
+              <h2 class="card-title">Espectro das cores: RGB e CMYK</h2>
+              <button class="card-button material-symbols-outlined">arrow_forward</button>
+            </a>
+          </li>
+ 
+          <li class="card-item swiper-slide">
+            <a href="#" class="card-link">
+              <img src="/Img/home_cards/card_2.png" alt="Card Image" class="card-image" />
+              <p class="badge">Design Gráfico</p>
+              <h2 class="card-title">Espectro das cores: RGB e CMYK</h2>
+              <button class="card-button material-symbols-outlined">arrow_forward</button>
+            </a>
+          </li>
+ 
+          <li class="card-item swiper-slide">
+            <a href="#" class="card-link">
+              <img src="/Img/home_cards/card_3.png" alt="Card Image" class="card-image" />
+              <p class="badge">Desenvolvimento mobile</p>
+              <h2 class="card-title">Jogo Labirinto quest</h2>
+              <button class="card-button material-symbols-outlined">arrow_forward</button>
+            </a>
+          </li>
+          <!-- ... repita conforme necessário ... -->
+        </ul>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="swiper-button-next"></div>
+    </section>
+  </div>
+<!-- BOTAO VER MAIS -->
+  <div class="ver-mais-container">
+    <a href="/Pages/pg_pesquisa.html">
+    <button id="verMaisBtn">Ver mais</button>
+    </a>
+  </div>
+ 
+ 
+  <!-- BOTÃO WHATSAPP -->
+  <a href="https://wa.me/557131864000" class="whatsapp-btn" target="_blank" title="Fale conosco pelo WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+ 
+  <!-- FOOTER NOVO -->
+  <!-- FOOTER NOVO -->
+  <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-links">
+      <a href="https://cursos.ba.senac.br/">Cursos</a>
+      <a href="https://cursos.ba.senac.br/faq">FAQ</a>
+      <a href="https://www.ba.senac.br/Institucional/Sobre">Sobre</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/senacbahia/" target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/school/senac-bahia" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="https://www.youtube.com/senacbahia" target="_blank"><i class="bi bi-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 Senac. Todos os direitos reservados.
+  </div>
+  <a href="#" class="back-to-top botaoTopo custom-top-button" title="Voltar ao topo">
+    <i class="bi bi-arrow-up"></i>
+  </a>
+</footer>
+ 
+  <!-- SCRIPTS -->
+  <script>
+    // Botão WhatsApp
+    const btn = document.querySelector('.whatsapp-btn');
+    function startShakeCycle() {
+      btn.classList.add('shake');
+      setTimeout(() => {
+        btn.classList.remove('shake');
+      }, 1000);
+    }
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        startShakeCycle();
+        setInterval(startShakeCycle, 10000);
+      }, 10000);
+    });
+ 
+    // Menu hamburguer
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-container');
+    hamburger.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="/Js/pg_home.js"></script>
+</body>
+ 
+</html>

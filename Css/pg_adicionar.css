@@ -1,0 +1,404 @@
+* {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+ 
+.main-content {
+  flex: 1;
+}
+
+.navbar {
+  position: fixed;/* Fixa a navbar no topo da tela, mesmo ao rolar a página */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;/* Garante que a navbar fique acima de todos os outros elementos */
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.11);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+}
+ 
+.logo {
+  height: 40px;
+  margin-left: 12px;
+}
+ 
+.nav-container {
+  display: flex;
+  gap: 20px;
+}
+ 
+.nav-button {
+  padding: 10px 16px;
+  background: #fff;
+  border-radius: 8px 8px 0 0;
+  text-decoration: none;
+  color: #003366;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+ 
+.nav-button i {
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+ 
+.nav-button:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.17);
+  transform: scale(1.03);
+  color: #F6931D;
+}
+ 
+.nav-button:hover i {
+  color: #F6931D;
+}
+ 
+.nav-button.active {
+  border-bottom: 3px solid #FFA500;
+  font-weight: 700;
+}
+ 
+/* ========== NAVBAR MOBILE ========== */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #003366;
+}
+ 
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+ 
+  .nav-container {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+ 
+  .nav-container.active {
+    display: flex;
+  }
+}
+
+
+
+/* Área principal */
+main {
+  width: 90%;
+  max-width: 700px;
+  margin: 2em auto;
+  margin-top: 150px;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 1.5em;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.11);
+  color: #003366;
+}
+
+/* Botão customizado */
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #F6931D;
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.custom-file-upload:hover {
+  background-color: white;
+  border: #F6931D 1px solid; 
+  color: #F6931D;
+  font-weight: 300;
+}
+
+#file-chosen {
+  margin-left: 10px;
+  font-style: italic;
+}
+
+h1, h2 {
+  margin-bottom: 1em;
+  color: #003366;
+}
+
+/* Formulário */
+.form-group {
+  margin-bottom: 1.5em;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="file"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.6em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border-left: #F6931D 5px solid;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 0.7em;
+  background-color: #F6931D;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: white;
+  border: #F6931D 1px solid; 
+  color: #F6931D;
+  font-weight: 300;
+}
+
+/* Container de busca */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background-color: white;
+  max-width: 400px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  flex: 1;
+}
+
+.clear-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  font-size: 1.2rem;
+  display: none;
+}
+
+.clear-button.visible {
+  display: inline-block;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  background-color: #003366;
+  color: #fff;
+  padding: 20px 30px;
+  font-size: 16px;
+  margin-top: auto;
+}
+ 
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+ 
+/* .footer-logo img {
+  height: 40px;
+  filter: brightness(0) invert(1);
+  margin-top: 20%;
+} */
+ 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-left: 30px;
+  align-items: center;
+}
+ 
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+ 
+.footer-links a:hover {
+  color: #F6931D;
+}
+ 
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+ 
+.footer-social a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+ 
+.footer-social a:hover {
+  color: #F6931D;
+}
+ 
+.footer-bottom {
+  margin-top: 15px;
+  margin-left: 30px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.custom-top-button {
+  position: fixed;
+  bottom: 110px; /* Acima do WhatsApp (ajuste conforme necessário) */
+  right: 20px;
+  z-index: 1000;
+  background-color: #004A8C;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+ 
+.custom-top-button:hover {
+  background-color: #0056b3;
+  text-decoration: none;
+}
+ 
+
+/* Responsividade para telas de menores, incluindo tablets*/
+@media (max-width: 768px) {
+  main {
+      width: 95%;
+  }
+
+  form {
+      padding: 1em;
+  }
+
+  button {
+      width: 100%;
+  }
+}
+
+.testando {
+  font-family: arial;
+}
+
+
+.input-clearable {
+  position: relative;
+}
+
+.input-clearable input[type="text"] {
+  padding-right: 30px; /* espaço para o botão 'x' */
+}
+
+.input-clearable .clear-button {
+  position: absolute;
+  right: -310px;
+  top: 74%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #888;
+  display: none;
+}
+
+.input-clearable input:not(:placeholder-shown) + .clear-button {
+  display: inline-block;
+}
+
+
+.custom-top-button {
+  position: fixed;
+  bottom: 110px; /* Acima do WhatsApp (ajuste conforme necessário) */
+  right: 20px;
+  z-index: 1000;
+  background-color: #004A8C;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+ 
+.custom-top-button:hover {
+  background-color: #0056b3;
+  text-decoration: none;
+}
+
+/* ===================== BOTÃO WHATSAPP ===================== */
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  font-size: 28px;
+  padding: 14px 16px;
+  border-radius: 50%;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-btn.shake {
+  animation: shake 0.3s ease-in-out;
+}
