@@ -291,21 +291,6 @@ button:hover {
 
 /* Adicione estas regras no arquivo CSS */
 
-/* Estilo para o ícone de olho */
-.toggle-password {
-    position: absolute;
-    right: 30px; /* Posição ajustada para não sobrepor com o botão X */
-    top: 70%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #aaa;
-    font-size: 16px;
-    z-index: 2;
-}
-
-.toggle-password:hover {
-    color: #333;
-}
 
 /* Ajuste para o botão X ficar à direita do ícone de olho */
 .clear-btn {
@@ -317,4 +302,20 @@ button:hover {
 .input-wrapper input[type="password"],
 .input-wrapper input[type="text"] {
     padding-right: 60px; /* Espaço para os dois ícones */
+}
+
+/* Ícone de olho posicionado abaixo do "x" */
+.toggle-password {
+    position: absolute;
+    right: 16px;
+    top: 70%;          /* um pouco mais para baixo */
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #aaa;
+    font-size: 30px;
+    border: 2px #acacac solid;
+}
+
+.toggle-password:hover {
+    color: #333;
 }
