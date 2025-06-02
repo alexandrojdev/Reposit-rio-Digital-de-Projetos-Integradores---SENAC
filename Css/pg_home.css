@@ -38,7 +38,7 @@ body {
  
 .navbar {
   position: fixed;/* Fixa a navbar no topo da tela, mesmo ao rolar a página */
-  top: 0;
+  top: 1;
   left: 0;
   right: 0;
   z-index: 1000;/* Garante que a navbar fique acima de todos os outros elementos */
