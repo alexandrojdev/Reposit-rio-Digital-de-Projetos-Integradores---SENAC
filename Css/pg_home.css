@@ -55,6 +55,11 @@ body {
   margin-left: 12px;
 }
  
+.logo-link {
+  height: 40px;
+  margin-left: 12px;
+}
+
 .nav-container {
   display: flex;
   gap: 20px;
@@ -119,7 +124,6 @@ body {
     background: #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: none;
-      border: 2px solid green;
   }
  
   .nav-container.active {
