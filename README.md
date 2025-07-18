@@ -40,3 +40,8 @@ O projeto é composto por várias páginas HTML estilizadas com CSS e com script
 ✅ Pesquisa e filtros por área, curso e data  
 ✅ Visualização detalhada dos projetos com descrição, mídias, equipe e docentes  
 ✅ Comentários nos projetos  
+
+
+## 🚀 Como rodar
+
+Para rodar o projeto, basta clonar este repositório e abrir o arquivo `pg_home.html` em um navegador web. Por ser um projeto estático, não requer servidor backend.
